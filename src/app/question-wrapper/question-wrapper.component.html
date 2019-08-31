@@ -1,0 +1,6 @@
+<app-question 
+  *ngIf="!showFinalScore" 
+  [question]="question" 
+  (onNextClicked)="next()">
+</app-question>
+<app-final-score *ngIf="showFinalScore" (onRetakeClicked)="retake()"></app-final-score>

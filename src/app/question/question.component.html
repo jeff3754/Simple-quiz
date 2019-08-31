@@ -1,0 +1,13 @@
+<fieldset *ngIf="question">
+    <legend>{{ question.text }}</legend>
+    <div *ngFor="let option of question.options; let i = index;">
+      <input id="option-{{i}}"
+        class="radio"
+        type="radio" 
+        name="options" 
+        [(ngModel)]="selectedOption"
+        [value]="option.text">
+        <label for="option-{{i}}">{{ option.text }}</label>
+    </div>
+</fieldset>
+<button class="color-btn solid green" (click)="next()">{{ buttonText }}</button>
